@@ -1,38 +1,79 @@
-.App {
-  text-align: center;
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #ececec;
+  height: 100vh;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todo,
+.todo-accordion {
+  background-color: #fff;
+  padding: 14px 0;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 400px;
+  margin: 14px auto;
+}
+.todo-accordion h3 {
+  padding: 14px;
+  background-color: #ccc;
+}
+.todo ul {
+  width: 100%;
+}
+.todo li {
+  border-bottom: 1px solid #ccc;
+  padding: 7px 14px;
+  display: flex;
+}
+.todo li button {
+  margin-left: auto;
+  border: 1px solid blue;
+  background: transparent;
+  color: blue;
+}
+.todo-input input {
+  height: 32px;
+  border: 1px solid #ccc;
+  margin-right: 14px;
+  flex: 1;
+}
+.todo-input button {
+  height: 32px;
+  min-width: 80px;
+  border: none;
+  background-color: blue;
+  color: #fff;
+}
+.todo-input {
+  padding: 14px;
+  display: flex;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-accordion > li {
+  display: flex;
+  flex-direction: column;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-accordion > ul > .todo-input {
+  border-top: 1px solid #cccc;
+}
+.task-completed {
+  text-decoration: line-through;
+}
+.expand section.todo {
+  display: flex;
+}
+.collapse section.todo {
+  display: none;
+}
+.collapse > h3 button::before {
+  content: "\002B";
+}
+.expand > h3 button::before {
+  content: "\2212";
 }
